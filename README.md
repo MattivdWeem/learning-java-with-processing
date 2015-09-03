@@ -4,11 +4,15 @@
 So Matti is learning Java with Processing..
 
 
-untill now: 
+untill now:
  - just take a look at the refference.. there is a LOT!
  - it's fake java (non strict, non oop)
- 
- - int / string are all the same
+
+ - int / string are all the same as in normal languages, so int's re ints and strings are strings. also floats exists and probably doubles
+
+ - active loops can be loaded
+ 	- `void settup(){}`
+	- `void draw(){}`
 
 
 
