@@ -5,7 +5,7 @@ So Matti is learning Java with Processing..
 
 
 untill now:
- - just take a look at the refference.. there is a LOT!
+ - just take a look at the [reference](https://processing.org/reference/).. there is a LOT!
  - it's functional writing java, it feels horrible. But it's an easy start
  - int / string are all the same as in normal languages, so int's re ints and strings are strings. also floats exists and probably doubles
 
