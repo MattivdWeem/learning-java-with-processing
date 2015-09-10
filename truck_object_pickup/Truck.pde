@@ -72,17 +72,16 @@ class Truck {
         if (!(getLocationX() + getTruckWidth() >= oLocX)  || !(getLocationX() <= (oLocX + object.getObjectWidth()))) {
           object.setDropped(false);
           return false;
-        }
-    
-        if (!(getLocationY() + getTruckHeight() >= oLocY)  || !(getLocationY() <= (oLocY + object.getObjectHeight()))) {
-          object.setDropped(false);
-          return false;
-        }
-        
+        }     
     } else {
       if (getLocationY() != object.getLocationY() || getLocationX() != object.getLocationX()) {
+        object.setDropped(false);
         return false;
       }
+    }
+    if (!(getLocationY() + getTruckHeight() >= oLocY)  || !(getLocationY() <= (oLocY + object.getObjectHeight()))) {
+      object.setDropped(false);
+      return false;
     }
     return true;
   }

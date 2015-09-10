@@ -1,7 +1,7 @@
 Truck Truck;
 Object Object;
 
-int speed = 5;
+int speed = 20 ;
 boolean AutoPickup = true;
 boolean hardMode = true;  
 int wWidth = 800;
@@ -18,8 +18,8 @@ void setup() {
   Object = new Object();
   Object.setObjectWidth(40);
   Object.setObjectHeight(40);
-  Object.setLocationY(int(random(height - Object.getObjectHeight())));
-  Object.setLocationX(int(random(width - Object.getObjectWidth())));
+  Object.setLocationY(formRand(height));
+  Object.setLocationX(formRand(width));
   Object.setObjectColor(objectColor);
   Object.drawObject();
 
@@ -28,11 +28,15 @@ void setup() {
   Truck.setTruckHeight(40);
   Truck.setTruckWidth(40);
   Truck.setSpeed(speed);
-  Truck.setLocationX(int(random(width - Truck.getTruckWidth())));
-  Truck.setLocationY(int(random(height - Truck.getTruckHeight())));
+  Truck.setLocationX(formRand(width));
+  Truck.setLocationY(formRand(height));
   Truck.setTruckColor(truckColor);
 
   Truck.drawTruck();
+}
+
+int formRand(int input){
+  return int(random(1, input/speed)) *speed;
 }
 
 void draw() {
