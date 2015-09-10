@@ -47,16 +47,16 @@ void keyPressed() {
   rect(Truck.getLocationX(), Truck.getLocationY(), Truck.getTruckWidth(), Truck.getTruckHeight());
 
   switch (keyCode) {
-  case 40:  
+  case DOWN:  
     Truck.moveDown();
     break;
-  case 39:  
+  case RIGHT:  
     Truck.moveRight();
     break;
-  case 38:  
+  case UP:  
     Truck.moveUp();
     break;
-  case 37:  
+  case LEFT:  
     Truck.moveLeft();
     break;
   case 10:  
