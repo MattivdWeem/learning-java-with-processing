@@ -64,6 +64,9 @@ class Object {
 
     ellipse(getLocationX(), getLocationY(), getObjectWidth(), getObjectHeight());
   }
+  
+  
+
 }
 
 

@@ -1,8 +1,9 @@
 Truck Truck;
 Object Object;
 
-int speed = 10;
+int speed = 5;
 boolean AutoPickup = true;
+boolean hardMode = true;  
 int wWidth = 800;
 int wHeight = int(wWidth/1.5);
 color background = color(04, 102, 0);
@@ -26,6 +27,7 @@ void setup() {
   Truck.setAutopick(AutoPickup);
   Truck.setTruckHeight(40);
   Truck.setTruckWidth(40);
+  Truck.setSpeed(speed);
   Truck.setLocationX(int(random(width - Truck.getTruckWidth())));
   Truck.setLocationY(int(random(height - Truck.getTruckHeight())));
   Truck.setTruckColor(truckColor);
@@ -42,16 +44,16 @@ void keyPressed() {
 
   switch (keyCode) {
   case 40:  
-    Truck.setLocationY(Truck.getLocationY() + speed);
+    Truck.moveDown();
     break;
   case 39:  
-    Truck.setLocationX(Truck.getLocationX() + speed);
+    Truck.moveRight();
     break;
   case 38:  
-    Truck.setLocationY(Truck.getLocationY() - speed);
+    Truck.moveUp();
     break;
   case 37:  
-    Truck.setLocationX(Truck.getLocationX() - speed);
+    Truck.moveLeft();
     break;
   case 10:  
     pickup(true);
@@ -78,7 +80,7 @@ void pickup(boolean keyPress) {
     }
     return;
   }
-  if (Truck.pickUp(Object)) {
+  if (Truck.pickUp(Object, hardMode)) {
     if (!Object.getDropped()) {
       Object.setPickedUp(true);
     }

@@ -5,6 +5,7 @@ class Truck {
   int truckWidth;
   int truckHeight;
   int locationY;
+  int speed;
   color truckColor;
   boolean autopick = false;
 
@@ -20,6 +21,14 @@ class Truck {
   
   void setTruckColor(color Color){
     this.truckColor = Color;
+  }
+  
+  void setSpeed(int speed){
+    this.speed = speed;
+  }
+  
+  int getSpeed(){
+    return this.speed;
   }
   
   color getTruckColor(){
@@ -49,7 +58,7 @@ class Truck {
     return this.locationY;
   }
 
-  Boolean pickUp(Object object) {
+  Boolean pickUp(Object object, boolean hardMode) {
 
     int oLocX = object.getLocationX();
     int oLocY = object.getLocationY();
@@ -57,14 +66,23 @@ class Truck {
     boolean acceptWidth = false;
     boolean acceptHeight = false;
 
-    if (!(getLocationX() + getTruckWidth() >= oLocX)  || !(getLocationX() <= (oLocX + object.getObjectWidth()))) {
-      object.setDropped(false);
-      return false;
-    }
-
-    if (!(getLocationY() + getTruckHeight() >= oLocY)  || !(getLocationY() <= (oLocY + object.getObjectHeight()))) {
-      object.setDropped(false);
-      return false;
+    
+    if (!hardMode) {
+        
+        if (!(getLocationX() + getTruckWidth() >= oLocX)  || !(getLocationX() <= (oLocX + object.getObjectWidth()))) {
+          object.setDropped(false);
+          return false;
+        }
+    
+        if (!(getLocationY() + getTruckHeight() >= oLocY)  || !(getLocationY() <= (oLocY + object.getObjectHeight()))) {
+          object.setDropped(false);
+          return false;
+        }
+        
+    } else {
+      if (getLocationY() != object.getLocationY() || getLocationX() != object.getLocationX()) {
+        return false;
+      }
     }
     return true;
   }
@@ -74,5 +92,33 @@ class Truck {
   } 
   void setLocationY(int newPos) {
     this.locationY = newPos;
+  }
+  
+  void moveDown(){
+      this.setLocationY(this.getLocationY() + speed);
+      if (this.getLocationY() + this.getTruckHeight() >= height) {
+        this.setLocationY(height - this.getTruckHeight());
+      }
+  }
+  
+  void moveUp(){
+      this.setLocationY(this.getLocationY() - speed);
+      if (this.getLocationY() <= 0) {
+        this.setLocationY(0);
+      }
+  }
+  
+  void moveLeft(){
+      this.setLocationX(this.getLocationX() - speed);
+      if (this.getLocationX() <= 0) {
+        this.setLocationX(0);
+      }
+  }
+  
+  void moveRight(){
+    this.setLocationX(this.getLocationX() + speed);
+    if (this.getLocationX() + this.getTruckWidth() >= width) {
+      this.setLocationX(width - this.getTruckWidth());
+    }
   }
 }
