@@ -9,13 +9,10 @@ void setup(){
 }
 
 void draw(){
-  clear();
   background(255);
   noStroke();
   fill(255,255,0);
-  
   textAlign(CENTER, CENTER);
-  
   rect(20, height/4*3, width - 40, height/4);
   
   text = "zet aan";
