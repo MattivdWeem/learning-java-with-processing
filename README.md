@@ -21,10 +21,10 @@ untill now:
  
  #####Loops:
  Loops are EXACTLY the same as every language
- 
+``` 
  	for (){}
 	while (){}
-	
+```	
  So creating a for each loop will result in : `for (int i = 0; i < values.length; i++ ) {`
 
 
