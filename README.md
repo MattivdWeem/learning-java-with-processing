@@ -15,6 +15,17 @@ untill now:
 
 
 
+ #####Images:
+ To display images The PImage class/utility is loaded this utility has to be defined for every image, creating multiple images is easy using  `PImage female, male;` lazy vars. 
+ 
+ 
+ #####Loops:
+ Loops are EXACTLY the same as every language
+ 
+ 	for (){}
+	while (){}
+	
+ So creating a for each loop will result in : `for (int i = 0; i < values.length; i++ ) {`
 
 
 `
