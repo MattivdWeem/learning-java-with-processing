@@ -2,3 +2,5 @@ libraries
 modes
 testfile
 tools
+.DS_Store
+*.zip
